@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:proyecto="clr-namespace:HolaMoviles"
+             x:Class="HolaMoviles.MainPage"
+             Title="Hola Moviles">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Mostrar" x:Name="ToolbarItem1" />
+        <ToolbarItem Text="toolbar 2" x:Name="ToolbarItem2" />
+        <ToolbarItem Text="toolbar 3" Order="Secondary" />
+
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+                     Margin="20" BackgroundColor="#15B097">
+
+            <StackLayout BackgroundColor="#2E4272"
+                          Margin="10">
+
+                <Switch HorizontalOptions="End" />
+                <Label Text="Elija la fecha" />
+
+                <DatePicker />
+            </StackLayout>
+
+            <StackLayout BackgroundColor="LightGray"
+                         Margin="20" x:Name="Panel3"
+                         VerticalOptions="Center">
+
+                <Label Text="Indique su nombre" x:Name="labelSaludo" />
+                
+                <Label Text="{Binding Text, Source={x:Reference entryNombre}}" />
+                <Label Text="{Binding Text, Source={x:Reference entryNombre}}" />
+                <Label Text="{Binding Text, Source={x:Reference entryNombre}}" />
+                <Label Text="{Binding Text, Source={x:Reference entryNombre}}" />
+                <Label Text="{Binding Text, Source={x:Reference entryNombre}}" />
+
+                <!-- Place new controls here -->
+                <Entry x:Name="entryNombre" Text="Hola, mundo!" 
+                       HorizontalOptions="Center"
+                       />
+                <Button Text="Haga click" x:Name="boton1" />
+                <Button x:Name="botonNavegar" Text="Abrir"></Button>
+                
+            </StackLayout>    
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

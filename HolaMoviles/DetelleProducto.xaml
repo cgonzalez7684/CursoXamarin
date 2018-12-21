@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HolaMoviles.DetelleProducto"
+             Title="{Binding Nombre,StringFormat='Dellare de {0}'}">
+    <ContentPage.Content>
+        <StackLayout Orientation= "Vertical" Margin="20">
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="Nombre:" />
+                <Label Text="{Binding Nombre}" />
+                
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Cantidad:" />
+                <Label Text="{Binding Cantidad}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Precio:" />
+                <Label Text="{Binding Precio, StringFormat='$${0}'}" />
+            </StackLayout>
+            <Button Text="Llamar" x:Name="botonLlamada"/>
+            <Image Source="{Binding RutaImagen}" VerticalOptions="FillAndExpand" Aspect="Fill" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

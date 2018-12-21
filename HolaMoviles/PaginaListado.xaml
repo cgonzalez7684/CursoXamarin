@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="HolaMoviles.PaginaListado"
+             Title="Listado de datos">
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar Placeholder="Filtre los elementos" />
+        
+            <ListView x:Name="ListViewDatos" 
+                      IsRefreshing="{Binding IsBusy}" 
+                      IsPullToRefreshEnabled="true"
+                      ItemsSource="{Binding Items}"
+                      RefreshCommand="{Binding RefrescarCommand}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding RutaImagen}" />
+                                <Label Text="{Binding Nombre}" HorizontalOptions="FillAndExpand"
+                                       VerticalTextAlignment="Center" />
+                                
+                                <Label Text="{Binding Precio}" Margin="5" HorizontalOptions="End"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Agregar" Command="{Binding AgregarCommand}" /> 
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
